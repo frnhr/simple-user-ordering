@@ -32,7 +32,7 @@ class SimpleUserOrdering_Plugin {
     protected function __construct() {
         add_action( 'pre_user_query',                           array( $this, 'alter_user_search' )                     );
         add_action( 'admin_head',                               array( $this, 'sort_users_js' )                         );
-        add_action( 'wp_ajax_my_action',                        array( $this, 'my_action_callback' )                    );
+        add_action( 'wp_ajax_my_action',                        array( $this, 'ajax_update' )                           );
         add_action( 'user_register',                            array( $this, 'registration_save' )                     );
         add_filter( 'manage_users_columns',                     array( $this, 'add_user_id_column' )                    );
         add_action( 'manage_users_custom_column',               array( $this, 'show_menu_order_column_content' ), 10, 3 );
